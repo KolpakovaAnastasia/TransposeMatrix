@@ -1,14 +1,16 @@
 import org.kohsuke.args4j.*;
 import java.io.*;
+import java.util.List;
+
 public class Parser {
 
-    @Argument(usage = "Read data from this file", metaVar = "file")
+    @Argument(  usage = "Read data from this file", metaVar = "file")
     private String inputFile;
 
-    @Option(name = "-o", required = true, usage = "Write data to this file", metaVar = "ofile")
+    @Option(name = "-o",  usage = "Write data to this file", metaVar = "ofile")
     private String outputFile;
 
-    @Option(name = "-a", required = true, usage = "Align data by num symbols in each word", metaVar = "num")
+    @Option(name = "-a", usage = "Align data by num symbols in each word", metaVar = "num")
     private int numAlign;
 
     @Option(name = "-t", usage = "Cut data to num symbols (num is declare in -a num)", metaVar = "cutting")
@@ -17,7 +19,8 @@ public class Parser {
     @Option(name = "-r", usage = "Right align", metaVar = "rightAlign")
     private boolean isRightAligned;
 
-    public static void main(String[] args) throws CmdLineException{
+    public static void main(String[] args) {
+
         new Parser().start(args);
     }
 
@@ -48,6 +51,8 @@ public class Parser {
                 writer = new FileWriter(outputFile);
             }
             else writer = new OutputStreamWriter(System.out);
+            List<List<String>> matrix = transpose.matrix(reader);
+            transpose.writeMatrix(matrix,writer);
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }

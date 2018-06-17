@@ -80,11 +80,4 @@ public void writeMatrix(List<List<String>> oldLines, Writer writer) throws IOExc
         writer.close();
 }
 
-
-
-
-
-
-
-
 }

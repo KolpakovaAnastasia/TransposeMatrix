@@ -8,8 +8,8 @@ public class TranspositionTest {
     private static File test1 = new File("src/test/java/TransposeMatrix/1.txt");
     private static File test2 = new File("src/test/java/TransposeMatrix/2.txt");
     private static File test3 = new File("src/test/java/TransposeMatrix/3.txt");
-    private static File outFile = new File("src/test/java/TransposeMatrix/output.txt");
     private static File test4 = new File("src/test/java/TransposeMatrix/4.txt");
+    private static File outFile = new File("src/test/java/TransposeMatrix/output.txt");
 
     private static FileReader test1Reader;
     private static FileReader test2Reader;
@@ -18,7 +18,6 @@ public class TranspositionTest {
 
     private static FileWriter outputWriter;
     private static FileReader outputReader;
-
 
     @Before
     public void before() throws IOException {
@@ -40,9 +39,9 @@ public class TranspositionTest {
         Transposition matrix = new Transposition(5, false, false);
         List<List<String>> matrixContent = matrix.matrix(test4Reader);
         matrix.writeMatrix(matrixContent, outputWriter);
-        assertEquals("  end  line  like   are oracle\n" +
-                "begin again kidding    me actually\n" +
-                "commute class   kek around     i\n", outputWriter.toString());
+        assertEquals("  bum   pam    fr\n" +
+                "bubum param    mr\n" +
+                "bububum parampampam    br\n", outputWriter.toString());
     }
 
     @Test
@@ -80,7 +79,3 @@ public class TranspositionTest {
                 "commute class kek around i\n", outputWriter.toString());
     }
 }
-
-
-
-
