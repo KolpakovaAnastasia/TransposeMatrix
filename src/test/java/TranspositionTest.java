@@ -4,18 +4,15 @@ import java.io.*;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
 public class TranspositionTest {
-
     private static File test1 = new File("src/test/java/TransposeMatrix/1.txt");
     private static File test2 = new File("src/test/java/TransposeMatrix/2.txt");
     private static File test3 = new File("src/test/java/TransposeMatrix/3.txt");
     private static File test4 = new File("src/test/java/TransposeMatrix/4.txt");
     private static File outFile = new File("src/test/java/TransposeMatrix/output.txt");
-
     private static FileReader test1Reader;
     private static FileReader test2Reader;
     private static FileReader test3Reader;
     private static FileReader test4Reader;
-
     private static FileWriter outputWriter;
     private static FileReader outputReader;
 
