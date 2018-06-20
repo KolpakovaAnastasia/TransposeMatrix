@@ -21,7 +21,6 @@ public class Transposition {
         }
     }
 
-
     private String edit(String str, String rightAlign, String strNum, Boolean isCut) {
         String editedStr;
         editedStr = String.format("%" + rightAlign + strNum + "s", str);
@@ -66,8 +65,7 @@ public class Transposition {
         return inMatrix;
     }
 
-
-public void writeMatrix(List<List<String>> oldLines, Writer writer) throws IOException {
+    public void writeMatrix(List<List<String>> oldLines, Writer writer) throws IOException {
         int n = oldLines.size();
         BufferedWriter buff = new BufferedWriter(writer);
         for (int i = 0; i < n; i++) {
@@ -79,5 +77,4 @@ public void writeMatrix(List<List<String>> oldLines, Writer writer) throws IOExc
         buff.close();
         writer.close();
 }
-
 }

@@ -3,7 +3,6 @@ import java.io.*;
 import java.util.List;
 
 public class Parser {
-
     @Argument(  usage = "Read data from this file", metaVar = "file")
     private String inputFile;
 
